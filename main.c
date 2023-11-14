@@ -22,5 +22,8 @@ int main(void)
         len2 = printf("String:[%s]\n", "I am a string !");
 	printf("%d\n", len1);
 	printf("%d\n", len2);
+	len1 = _printf("%b\n", 98);
+	_printf("%d\n", len1);
+	printf("%d\n", len1);
 	return (0);
 }

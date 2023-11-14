@@ -27,5 +27,9 @@ int test_format(const char *str, va_list args)
 	{
 		count = count + formatD_handle(args);
 	}
+	if (*str == 'b')
+	{
+		count = count + formatB_handle(args);
+	}
 	return (count);
 }

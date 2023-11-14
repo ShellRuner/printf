@@ -73,3 +73,48 @@ int formatD_handle(va_list args)
 	count = count + print_int(integer);
 	return (count);
 }
+
+/**
+ * print_binary - A function that allow to print number in binary
+ * @c: the number to print in binary
+ *
+ * Return: the number of character print
+ */
+int print_binary(int c)
+{
+	int count = 0, i = 0, j = 0, bin1 = '0';
+	unsigned int num = c, array[100];
+
+	if (c == 0)
+	{
+		write(1, &bin1, 1);
+		return (1);
+	}
+	while (num > 0)
+	{
+		array[i] = num % 2;
+		num = num / 2;
+		i++;
+	}
+	for (j = i - 1; j >= 0; j--)
+	{
+		_putchar(array[j] + '0');
+		count++;
+	}
+	return (count);
+}
+/**
+ * formatB_handle - A function that handle the %b
+ * @args: a parameter of type va_list
+ *
+ * Return: the number of character print
+ */
+int formatB_handle(va_list args)
+{
+	int count = 0;
+	unsigned int binary;
+
+	binary = va_arg(args, unsigned int);
+	count = count + print_binary(binary);
+	return (count);
+}
