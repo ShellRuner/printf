@@ -44,17 +44,17 @@ int formatS_handle(va_list args)
  */
 int print_int(int c)
 {
-	int count = 0, r = c % 10 + '0';
+	int count = 0, v = '-';
 
 	if (c < 0)
 	{
-		write(1, &c, 1);
+		write(1, &v, 1);
 		count++;
 		c = -c;
 	}
 	if (c / 10)
 		count = count + print_int(c / 10);
-	write(1, &r, 1);
+	_putchar(c % 10 + '0');
 	count++;
 	return (count);
 }

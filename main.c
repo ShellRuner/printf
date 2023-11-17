@@ -25,5 +25,6 @@ int main(void)
 	len1 = _printf("%b\n", 98);
 	_printf("%d\n", len1);
 	printf("%d\n", len1);
+	_printf("%d\n", -1024);
 	return (0);
 }
